@@ -168,6 +168,24 @@ class Data extends AbstractHelper
     public function getNetwork() {
         return $this->scopeConfig->getValue('payment/bitpay/network');
     }
+    
+    /**
+     * Returns the custom network host name.
+     *
+     * @return string
+     */
+    public function getCustomNetHost() {
+        return (string) $this->scopeConfig->getValue('payment/bitpay/customnethost');
+    }
+
+    /**
+     * Returns the custom network port number.
+     *
+     * @return integer
+     */
+    public function getCustomNetPort() {
+        return (integer) $this->scopeConfig->getValue('payment/bitpay/customnetport');
+    }
 
     /**
      * Returns the token.
@@ -203,6 +221,15 @@ class Data extends AbstractHelper
      */
     public function isLivenetNetwork() {
         return $this->getNetwork() === 'livenet';
+    }
+
+    /**
+     * Determines if the Network is a Custom Network.
+     *
+     * @return bool
+     */
+    public function isCustomNetwork() {
+        return $this->getNetwork() === 'Custom Network';
     }
 
     /**

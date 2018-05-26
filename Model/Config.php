@@ -58,6 +58,24 @@ class Config extends BaseConfig {
     }
 
     /**
+     * Returns the custom network host name.
+     *
+     * @return string
+     */
+    public function getCustomNetHost() {
+        return (string) $this->getValue('customnethost');
+    }
+
+    /**
+     * Returns the custom network port number.
+     *
+     * @return integer
+     */
+    public function getCustomNetPort() {
+        return (integer) $this->getValue('customnetport');
+    }
+
+    /**
      * Returns the token.
      *
      * @return string
@@ -91,6 +109,15 @@ class Config extends BaseConfig {
      */
     public function isLivenetNetwork() {
         return $this->getNetwork() === 'livenet';
+    }
+
+    /**
+     * Determines if the Network is a Custom Network.
+     *
+     * @return bool
+     */
+    public function isCustomNetwork() {
+        return $this->getNetwork() === 'Custom Network';
     }
 
     /**

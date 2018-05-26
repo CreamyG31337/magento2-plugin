@@ -6,6 +6,7 @@ use Bitpay\Client\Adapter\CurlAdapter;
 use Bitpay\Client\Client;
 use Bitpay\Network\Livenet;
 use Bitpay\Network\Testnet;
+use Bitpay\Network\Customnet;
 use Bitpay\PrivateKey;
 use Bitpay\PublicKey;
 use Bitpay\Core\Helper\Data;
@@ -67,9 +68,17 @@ class BitPayService {
         $publicKey  = $this->magentoStorage->load(self::STORE_PUBLIC_KEY);
         $privateKey = $this->magentoStorage->load(self::STORE_PRIVATE_KEY);
 
-        $network = $this->dataHelper->isLivenetNetwork()
-            ? new Livenet()
-            : new Testnet();
+        switch ($this->dataHelper->getNetwork()) {
+            case 'livenet' :
+                $network = new Livenet();
+            case 'testnet' :
+                $network = new Testnet();
+            case 'Custom Network' :
+                $network = new Customnet(
+                    $this->dataHelper->getCustomNetHost(),
+                    $this->dataHelper->getCustomNetPort(),
+                    true);
+        }
 
         $client->setNetwork($network);
         $client->setAdapter($adapter);

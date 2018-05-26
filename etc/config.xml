@@ -16,6 +16,7 @@
                 <payment_action>authorize</payment_action>
                 <title>Bitcoin</title>
                 <network>testnet</network>
+                <customnetport>443</customnetport>
                 <debug>0</debug>
                 <notification_url>bitpay/ipn</notification_url>
                 <redirect_url>checkout/onepage/success</redirect_url>

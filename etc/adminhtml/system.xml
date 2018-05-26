@@ -53,7 +53,21 @@
                             <![CDATA[You can sign up for a test account at <a href="https://test.bitpay.com" target="_blank">test.bitpay.com</a>.]]>
                         </comment>
                     </field>
-                    <field id="debug" translate="label" type="select" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="customnethost" translate="label" type="text" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Custom Network Host</label>
+                        <comment>
+                            <![CDATA[Enter your custom network host name here - ex: btcpay.myserver.com]]>
+                        </comment>
+                        <config_path>payment/bitpay/customnethost</config_path>
+                    </field>
+                    <field id="customnetport" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="0">
+                        <label>Custom Network Port</label>
+                        <comment>
+                            <![CDATA[Enter your custom network port number here - ex: 443]]>
+                        </comment>
+                        <config_path>payment/bitpay/customnetport</config_path>
+                    </field>
+                    <field id="debug" translate="label" type="select" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Debug</label>
                         <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
                         <config_path>payment/bitpay/debug</config_path>
@@ -61,15 +75,15 @@
                             <![CDATA[By enabling this, it will output more verbose information in log files.]]>
                         </comment>
                     </field>
-                    <field id="notification_url" translate="label" type="text" sortOrder="7" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="notification_url" translate="label" type="text" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Notification URL</label>
                         <config_path>payment/bitpay/notification_url</config_path>
                     </field>
-                    <field id="redirect_url" translate="label" type="text" sortOrder="8" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <field id="redirect_url" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                         <label>Redirect URL</label>
                         <config_path>payment/bitpay/redirect_url</config_path>
                     </field>
-                    <field id="speed" translate="label" type="select" sortOrder="9" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="speed" translate="label" type="select" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Transaction Speed</label>
                         <source_model>Bitpay\Core\Model\Config\Source\TransactionSpeed</source_model>
                         <config_path>payment/bitpay/speed</config_path>
@@ -82,26 +96,26 @@
                     <label>Magento Specific Settings</label>
                     <attribute type="expanded">1</attribute>
                     <frontend_model>Magento\Config\Block\System\Config\Form\Fieldset</frontend_model>
-                    <field id="allowspecific" translate="label" type="allowspecific" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="allowspecific" translate="label" type="allowspecific" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Payment from Applicable Countries</label>
                         <source_model>Magento\Payment\Model\Config\Source\Allspecificcountries</source_model>
                         <config_path>payment/bitpay/allowspecific</config_path>
                     </field>
-                    <field id="specificcountry" translate="label" type="multiselect" sortOrder="11" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="specificcountry" translate="label" type="multiselect" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Payment from Specific Countries</label>
                         <source_model>Magento\Directory\Model\Config\Source\Country</source_model>
                         <can_be_empty>1</can_be_empty>
                         <config_path>payment/bitpay/specificcountry</config_path>
                     </field>
-                    <field id="min_order_total" translate="label" type="text" sortOrder="12" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="min_order_total" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Minimum Order Total</label>
                         <config_path>payment/bitpay/min_order_total</config_path>
                     </field>
-                    <field id="max_order_total" translate="label" type="text" sortOrder="13" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="max_order_total" translate="label" type="text" sortOrder="15" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Maximum Order Total</label>
                         <config_path>payment/bitpay/max_order_total</config_path>
                     </field>
-                    <field id="sort_order" translate="label" type="text" sortOrder="14" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <field id="sort_order" translate="label" type="text" sortOrder="16" showInDefault="1" showInWebsite="1" showInStore="0">
                         <label>Sort Order</label>
                         <frontend_class>validate-number</frontend_class>
                         <config_path>payment/bitpay/sort_order</config_path>

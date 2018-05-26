@@ -12,6 +12,7 @@ class Network implements \Magento\Framework\Option\ArrayInterface
 {
     const NETWORK_LIVENET = 'livenet';
     const NETWORK_TESTNET = 'testnet';
+    const NETWORK_CUSTOMNET = 'Custom Network';
 
     /**
      * Possible environment types
@@ -28,6 +29,10 @@ class Network implements \Magento\Framework\Option\ArrayInterface
             [
                 'value' => self::NETWORK_TESTNET,
                 'label' => ucwords(self::NETWORK_TESTNET)
+            ],
+            [
+                'value' => self::NETWORK_CUSTOMNET,
+                'label' => ucwords(self::NETWORK_CUSTOMNET)
             ]
         ];
     }
