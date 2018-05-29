@@ -71,13 +71,16 @@ class BitPayService {
         switch ($this->dataHelper->getNetwork()) {
             case 'livenet' :
                 $network = new Livenet();
+                break;
             case 'testnet' :
                 $network = new Testnet();
+                break;
             case 'Custom Network' :
                 $network = new Customnet(
                     $this->dataHelper->getCustomNetHost(),
                     $this->dataHelper->getCustomNetPort(),
                     true);
+                break;
         }
 
         $client->setNetwork($network);
