@@ -109,9 +109,11 @@ class Bitcoin extends AbstractMethod
             'price'             => $invoice->getPrice(),
             'currency'          => $invoice->getCurrency()->getCode(),
             'order_id'          => $invoice->getOrderId(),
-            'invoice_time'      => intval($invoice->getInvoiceTime()->getTimestamp() / 1000),
-            'expiration_time'   => intval($invoice->getExpirationTime()->getTimestamp() / 1000),
-            'current_time'      => intval($invoice->getCurrentTime()->getTimestamp() / 1000),
+            //  Object of class DateTime could not be converted to int ... x3
+            // 'invoice_time'      => intval($invoice->getInvoiceTime()->getTimestamp() / 1000),
+            // 'expiration_time'   => intval($invoice->getExpirationTime()->getTimestamp() / 1000),
+            // 'current_time'      => intval($invoice->getCurrentTime()->getTimestamp() / 1000),
+            // bitpay, fix your stuff plz :)
             'btc_paid'          => $invoice->getBtcPaid(),
             'rate'              => $invoice->getRate(),
             'exception_status'  => !empty($invoice->getExceptionStatus()) ? $invoice->getExceptionStatus() : null,
